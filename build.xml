@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="libmica-gpio" default="compile" xmlns:ivy="antlib:org.apache.ivy.ant">
+
+	<property file="${basedir}/build.properties" />
+
+	<property name="resources.dir" location="${basedir}/resources" />
+
+	<import>
+		<url url="${ivy.url}/ant/default.xml" />
+	</import>
+
+	<target name="clean-cache" description="Cleans the ivy cache">
+		<clean-cache />
+	</target>
+
+	<target name="clean-all" description="Cleans the project">
+		<clean />
+		<make args="clean" />
+	</target>
+
+	<!-- Compiles the java source files -->
+	<target name="compile">
+		<mkdir dir="${build.dir}/include" />
+		<retrieve />
+		<unjar dest="${build.dir}/java">
+			<fileset dir="${lib.dir}">
+				<include name="havis.device.io-common-sources-*.jar" />
+			</fileset>
+			<patternset>
+				<include name="**/NativeHardwareManager.java" />
+			</patternset>
+		</unjar>
+		<javac nativeHeaderDir="${build.dir}/include" srcdir="${build.dir}/java" includes="havis/device/io/common/ext/NativeHardwareManager.java" release="${javac.version}" debug="${javac.debug}" includeantruntime="false">
+			<classpath>
+				<fileset dir="${lib.dir}" />
+			</classpath>
+		</javac>
+		<make args="all" />
+	</target>
+
+</project>

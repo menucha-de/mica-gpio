@@ -1,0 +1,14 @@
+#!/bin/bash
+
+set -e
+set -x
+
+env
+
+. /usr/share/mkapp/functions
+
+build -F
+
+if [ "$PUBLISH" ]; then
+  publish_debs
+fi

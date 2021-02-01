@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<ivysettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd">
+
+	<properties file="build.properties" />
+	<properties file="resources/version.properties" />
+
+	<property name="ivy.settings" value="ivysettings.xml" override="false" />
+	<include url="${ivy.url}/${ivy.settings}" />
+</ivysettings>

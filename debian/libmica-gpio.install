@@ -1,0 +1,2 @@
+include/mica_gpio.h usr/include
+target/libmica-gpio.so usr/lib

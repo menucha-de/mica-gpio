@@ -1,0 +1,8 @@
+Source: mica-gpio
+Maintainer: HARTING IT_SD <opensource@HARTING.com>
+Build-Depends: debhelper, libusb-1.0-0-dev, default-jdk-headless:native, crossbuild-essential-armhf:native [armhf], build-essential [amd64], libhidapi-dev
+
+Package: libmica-gpio
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: Native IO Device Implementation for MICA

@@ -1,0 +1,8 @@
+#!/usr/bin/make -f
+ 
+%:
+	dh $@
+
+override_dh_auto_clean:
+override_dh_auto_build:
+	ant -Dkeyfile=${keyfile} -Divy.resolver=remote -Divy.url=$(IVY) -Divy.default.ivy.user.dir=/tmp -Divy.settings=ivysettings_remote.xml -Dapi.url=$(API) -Dplatform=$(JAVA_PLATFORM) -Djavac.debug=$(DEBUG) compile

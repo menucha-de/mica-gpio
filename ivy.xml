@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ivy-module version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd">
+
+	<info organisation="havis/device/io" module="mica" default="true" />
+
+	<configurations>
+		<conf name="default" />
+	</configurations>
+
+	<dependencies>
+		<dependency org="havis/device/io" name="common" rev="${havis.version}" conf="default->default,src" transitive="false" />
+		<dependency org="havis/device/io" name="api" rev="${havis.version}" conf="default" transitive="false" />
+	</dependencies>
+
+</ivy-module>
